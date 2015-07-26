@@ -1,4 +1,4 @@
-<?
+<?php
 if(empty($_POST['ip'])){
 	$_POST['ip'] = $_SERVER['REMOTE_ADDR'];
 }
@@ -17,9 +17,9 @@ if(empty($_POST['method'])){
 	<option value="3" <? if($_POST['method']==3) echo 'selected="selected"'; ?> >IP->CMYK->RGB->HTML Color Names (Voisen.org CMYK2RGB conversion method)
 	<option value="4" <? if($_POST['method']==4) echo 'selected="selected"'; ?> >IP->CMYK->RGB->HTML Color Names (WIKIPEDIA CMYK2RGB conversion method)
 </select><br>
-<input type="submit" name="submit" value="Sprawdz kolor">
+<input type="submit" name="submit" value="Check color">
 </form>
-<?
+<?php
 if(!empty($_POST['ip'])){
 	require('./phpip2colorname.class.php');
 	$phpIp2ColorName = new phpIp2ColorName($_POST['ip'],$_POST['method']);
